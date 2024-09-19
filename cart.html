@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style4.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <title>Cart</title>
+    <style>
+        button {
+            background-color: darkblue;
+            /* Varsayılan buton arka plan rengi */
+            border: none;
+            /* Kenarlık yok */
+            color: white;
+            /* Yazı rengi beyaz */
+            padding: 10px 20px;
+            /* İç içe boşluklar */
+            text-align: center;
+            /* Yazıyı ortala */
+            text-decoration: none;
+            /* Altı çizgiyi kaldır */
+
+            /* Blok elemanı olarak görüntüleme */
+            font-size: 16px;
+            /* Yazı tipi boyutu */
+            cursor: pointer;
+            /* İmleç stilini değiştir */
+            border-radius: 4px;
+            /* Kenar yuvarlatma */
+            float: right;
+
+
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+            /* Butona fare üzerine gelindiğindeki arka plan rengi */
+        }
+
+        .sayaç {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sayaç:before {
+            content: attr(data-count);
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            min-width: 16px;
+            height: 16px;
+            padding: 2px;
+            border-radius: 50%;
+            background: darkblue;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <form>
+            <div id="box">
+                <input type="text" id="search" placeholder="Ara..">
+                <i class="fa fa-search"></i>
+            </div>
+        </form>
+        <a href="index.html"><img src="img/logo1.png" class="logo" alt=""></a>
+        <div>
+            <ul id="sepetListesi"></ul>
+            <ul id="navbar">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="shop.html">Market</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li class="sayaç"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <h1>SEPET</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+    </table>
+
+    <button onclick="clearCart()">Sepeti Temizle</button>
+
+    
+    <button onclick="yeniEkle()">Yeni Ürün Ekle</button>
+</body>
+<script src="script.js"></script>
+<script>
+    var sepet = []; // Boş bir dizi ile başlıyoruz
+
+    function urunEkle(product1) {
+        sepet.push(product1);
+
+        var sayaç = document.querySelector(".sayaç");
+        sayaç.setAttribute("data-count", sepet.length);
+
+        var li = document.createElement("cart-items");
+        li.textContent = cart-items;
+        document.getElementById("sepetListesi").appendChild(cart-items);
+
+        var toplamSayac = document.getElementById("toplamSayac");
+        toplamSayac.textContent = "Toplam Ürün Sayısı: " + sepet.length;
+    }
+    function yeniEkle() {
+        var urunAdi = prompt("Eklemek istediğiniz ürünün adını girin:");
+        if (urunAdi) {
+            urunEkle(urunAdi);
+        }
+    }
+    // Tıklama sayacı
+let clickCount = 0;
+
+// Kaydırma sayacı
+let scrollCount = 0;
+
+// Tıklama olayını dinle
+document.addEventListener('click', function() {
+  clickCount++;
+  document.getElementById('clickCount').textContent = clickCount;
+});
+</script>
+
+</html>
