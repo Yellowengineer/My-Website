@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style2.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <title>Shop</title>
+    <style>
+        button {
+            background-color: darkblue;
+            /* Varsayılan buton arka plan rengi */
+            border: none;
+            /* Kenarlık yok */
+            color: white;
+            /* Yazı rengi beyaz */
+            padding: 10px 20px;
+            /* İç içe boşluklar */
+            text-align: center;
+            /* Yazıyı ortala */
+            text-decoration: none;
+            /* Altı çizgiyi kaldır */
+            
+            /* Blok elemanı olarak görüntüleme */
+            font-size: 16px;
+            /* Yazı tipi boyutu */
+            cursor: pointer;
+            /* İmleç stilini değiştir */
+            border-radius: 4px;
+            /* Kenar yuvarlatma */
+            float: right;
+            
+            
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+            /* Butona fare üzerine gelindiğindeki arka plan rengi */
+        }
+        .sayaç {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sayaç:before {
+            content: attr(data-count);
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            min-width: 16px;
+            height: 16px;
+            padding: 2px;
+            border-radius: 50%;
+            background: darkblue;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <form>
+            <div id="box">
+                <input type="text" id="search" placeholder="Ara..">
+                <i class="fa fa-search"></i>
+            </div>
+        </form>
+        <a href="index.html"><img src="img/logo1.png" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a class="active" href="shop.html">Market</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+                <li class="sayaç"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+            </ul>
+            <p id="toplamSayac"></p>
+        </div>
+    </section>
+    <section id="product1" class="section-p1">
+        <div class="pro-container">
+            <div class="pro">
+                <img src="img/products/c333.png" alt="">
+                <div class="des">
+                    <span>LCWAIKIKI Classic</span>
+                    <h5>Polo Yaka Kısa Kollu Erkek Tişört</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>249,99 TL</h4>
+                </div>
+                <button onclick="addToCart('LCWAIKIKI Classic & Polo Yaka Kısa Kollu Erkek Tişört', '249,99 TL')">Sepete Ekle</button>
+            </div>
+            <div class="pro">
+                <img src="img/products/c444.png" alt="">
+                <div class="des">
+                    <span>LCW Vision</span>
+                    <h5>Slim Fit Erkek Pantolon</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>449,99 TL</h4>
+                </div>
+                <button onclick="addToCart('LCW Vision & Slim Fit Erkek Pantolon', '449,99 TL')">Sepete Ekle</button>
+            </div>
+            <div class="pro">
+                <img src="img/products/c555.png" alt="">
+                <div class="des">
+                    <span>LCW Vision</span>
+                    <h5>Slim Fit Erkek Pantolon</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>449,99 TL</h4>
+                </div>
+                <button onclick="addToCart('LCW Vision & Slim Fit Erkek Pantolon', '449,99 TL')">Sepete Ekle</button>
+            </div>
+            <div class="pro">
+                <img src="img/products/c666.png" alt="">
+                <div class="des">
+                    <span>LCWAIKIKI Basic</span>
+                    <h5>Bisiklet Yaka Kısa Kollu Penye Erkek Tişört</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>129,99 TL</h4>
+                </div>
+                <button onclick="addToCart('LCWAIKIKI Basic & Bisiklet Yaka Kısa Kollu Penye Erkek Tişört', '129,99 TL')">Sepete Ekle</button>
+            </div>
+            <div class="pro">
+                <img src="img/products/d333.png" alt="">
+                <div class="des">
+                    <span>LCW DREAM</span>
+                    <h5>Kadın Beli Lastikli Düz Deniz Şortu</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>179,99 TL</h4>
+                </div>
+                <button onclick="addToCart('LCW DREAM & Kadın Beli Lastikli Düz Deniz Şortu', '179,99 TL')">Sepete Ekle</button>
+            </div>
+            <div class="pro">
+                <img src="img/products/d444.png" alt="">
+                <div class="des">
+                    <span>LCW DREAM</span>
+                    <h5>Ayarlanabilir Askılı Düz Kadın Mayo</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>549,99 TL</h4>
+                </div>
+                <button onclick="addToCart('LCW DREAM & Ayarlanabilir Askılı Düz Kadın Mayo', '549,99 TL')">Sepete Ekle</button>
+            </div>
+            <div class="pro">
+                <img src="img/products/d666.png" alt="">
+                <div class="des">
+                    <span>LCW DREAM</span>
+                    <h5>Beli Lastikli Büzgü Detaylı Kadın Pareo</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>269,99 TL</h4>
+                </div>
+                <button onclick="addToCart('LCW DREAM & Beli Lastikli Büzgü Detaylı Kadın Pareo', '269,99 TL')">Sepete Ekle</button>
+            </div>
+            <div class="pro">
+                <img src="img/products/d777.png" alt="">
+                <div class="des">
+                    <span>LCW DREAM</span>
+                    <h5>Bisiklet Yaka Desenli Kısa Kollu Kadın Mayo Takımı</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>499,99 TL</h4>
+                </div>
+                <button onclick="addToCart('LCW DREAM & Bisiklet Yaka Desenli Kısa Kollu Kadın Mayo Takımı', '499,99 TL')">Sepete Ekle</button>
+            </div>
+            <!-- Diğer ürünler buraya eklenebilir -->
+            <!-- Diğer ürünler buraya eklenebilir -->
+            <!-- Diğer ürünler buraya eklenebilir -->
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+<script>
+    
+var sepet = []; // Boş bir dizi ile başlıyoruz
+
+        function urunEkle(product1) {
+            sepet.push(product1);
+            var sayaç = document.querySelector(".sayaç");
+            sayaç.setAttribute("data-count", sepet.length);
+
+            var tr = document.createElement("cart-items");
+            cartDataTransferItemList.textContent = pro;
+            document.getElementById("sepetListesi").appendChild(pro);
+
+            var toplamSayac = document.getElementById("toplamSayac");
+            toplamSayac.textContent = "Toplam Ürün Sayısı: " + sepet.length;
+        }
+
+</script>
+
+</html>
